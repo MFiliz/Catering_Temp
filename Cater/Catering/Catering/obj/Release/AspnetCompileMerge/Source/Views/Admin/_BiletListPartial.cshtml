@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Catering.Dto.AdminDto.BiletListDto>
+
+<script>
+    function getData(id) {
+        $.get("/Admin/GetBiletDetail?id=" + id, function (resp) {
+
+
+            $("#lblModelBaslik").html(resp.Baslik);
+            $("#lblModelGonderen").html(resp.Gonderen);
+            $("#lblModelSoru").html(resp.Soru);
+            $("#lblModelTarih").html(resp.TarihJ);
+
+            $.get("/Admin/BiletOku?id=" + id);
+        });
+
+
+    };
+</script>
+<table class="uk-table">
+
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>Telefon</th>
+            <th>İsim</th>
+            <th>E-Posta</th>
+            <th>Tarih</th>
+            <th>Okundu</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in @Model)
+        {
+
+            <tr>
+                @if (!string.IsNullOrEmpty(item.Baslik))
+                {
+                    if (item.Baslik.Length < 20)
+                    {
+                        <td>@item.Baslik</td>
+                    }
+                    else
+                    {
+                        <td>@item.Baslik.Substring(0, 19)</td>
+                    }
+                }
+                else
+                {
+                    <td>-</td>
+                }
+                @if (!string.IsNullOrEmpty(item.Telefon))
+                {
+                    <td>@item.Telefon</td>
+                }
+                else
+                {
+                    <td>-</td>
+                }
+                @if (!string.IsNullOrEmpty(item.Isim))
+                {
+
+                    <td>@item.Isim</td>
+
+                }
+                else
+                {
+                    <td>-</td>
+                }
+                @if (!string.IsNullOrEmpty(item.EPosta))
+                {
+                    <td>@item.EPosta</td>
+
+                }
+                else
+                {
+                    <td>-</td>
+
+                }
+                <td>@item.OlusturulmaZamani.ToShortDateString()</td>
+                @if (@item.OkunduMu)
+                {
+                    <td><i class="uk-icon-eye green-color"></i></td>
+                }
+                else
+                {
+                    <td>
+                        <i class="uk-icon-eye-slash red-color"></i>
+                    </td>
+                }
+                <td><a class="uk-button uk-button-color uk-margin-small-right" href="#modal-b" onclick="getData(@item.Id);" data-uk-modal>Oku</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="modal-b" class="uk-modal">
+    <div class="uk-modal-dialog uk-panel-box uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+        <h3 class="uk-panel-title" id="lblModelBaslik"></h3>
+        <h4>Gönderen:</h4>
+        <p id="lblModelGonderen" style="margin-top: -20px;"></p>
+        <h4>Tarih:</h4>
+        <p id="lblModelTarih" style="margin-top: -20px;"></p>
+        <h4>Soru:</h4>
+        <p id="lblModelSoru" style="margin-top: -20px;">
+        </p>
+    </div>
+</div>
+
+<script>
+
+</script>

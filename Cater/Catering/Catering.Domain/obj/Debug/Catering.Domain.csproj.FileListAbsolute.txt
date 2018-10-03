@@ -1,0 +1,4 @@
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\bin\Debug\Catering.Domain.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\bin\Debug\Catering.Domain.pdb
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\obj\Debug\Catering.Domain.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\obj\Debug\Catering.Domain.pdb

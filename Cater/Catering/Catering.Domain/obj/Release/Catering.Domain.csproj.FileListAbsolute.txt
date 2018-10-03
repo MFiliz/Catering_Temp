@@ -1,0 +1,5 @@
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\bin\Release\Catering.Domain.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\bin\Release\Catering.Domain.pdb
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\obj\Release\Catering.Domain.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\obj\Release\Catering.Domain.pdb
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Domain\obj\Release\Catering.Domain.csprojResolveAssemblyReference.cache

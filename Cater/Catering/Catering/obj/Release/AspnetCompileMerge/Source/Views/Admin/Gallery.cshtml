@@ -1,0 +1,125 @@
+﻿@model List<Catering.Dto.AdminDto.AdminGaleriDto>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/_AdminMaster.cshtml";
+}
+
+
+
+<div id="tm-main" class="tm-block-main uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <div class="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
+            <div class="tm-main uk-width-medium-1-2">
+                <main id="tm-content" @*class="tm-content"*@>
+                    <article class="uk-article tm-article">
+                        <div class="tm-article-wrapper">
+                            <div class="tm-article-content uk-margin-large-bottom uk-margin-top-remove">
+                                <div class="tm-article">
+                                    <!-- contact form -->
+                                    <div class="contact">
+
+                                        @using (Html.BeginForm("UploadImage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "uk-form" }))
+                                        {
+                                            <h1 class="uk-article-title">Resim Yükle</h1>
+
+                                            <div class="uk-form-row uk-margin-bottom">
+
+                                                <div class="uk-form-controls">
+                                                    <input type="file" name="file" id="file" style="width: 100%;" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-actions">
+                                                <button class="uk-button uk-button-primary" type="submit">Yükle</button>
+                                            </div>
+
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*@using (Html.BeginForm("UploadImage", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", @class = "uk-form uk-form-horizontal uk-margin-top" }))
+    {
+        <h1 class="uk-article-title">Resim Yükle</h1>
+        <input type="file" name="file" id="file" style="width: 100%;" />
+        <input type="submit" value="Upload" class="submit" />
+    }*@
+
+<div id="tm-main" class="tm-block-main  uk-block-default">
+    <div class="uk-container uk-container-center">
+        <div class="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
+            <div class="tm-main uk-width-medium-1-1">
+                <main id="tm-content" @*class="tm-content"*@>
+                    <article class="uk-article tm-article">
+                        <div class="tm-article-wrapper">
+                            <h1 class="uk-article-title">Galeri</h1>
+                            <div class="tm-article-content uk-margin-large-bottom uk-margin-top-remove">
+                                <div class="tm-article">
+                                    <div class="uk-grid uk-grid-width-medium-1-2 uk-grid-width-large-1-4" data-uk-grid-margin>
+                                        <!-- lightbox image -->
+
+                                        @foreach (var item in Model)
+                                        {
+
+                                            @*<div class="uk-thumbnail">
+                                                    <img src="@Url.Content("~/images/demo/gallery/" + item)">
+                                                    <div class="uk-thumbnail-caption">
+                                                        <button class="uk-button uk-button-primary" type="button">Sil</button>
+                                                    </div>
+                                                </div>*@
+                                            <div>
+
+                                                <a href="@Url.Content("~/images/demo/gallery/" + item.path)" data-uk-lightbox="{group:'gallery1'}">
+                                                    <figure class="uk-overlay uk-overlay-hover">
+                                                        <img class="uk-overlay-scale" src="@Url.Content("~/images/demo/gallery/" + item.path)" alt="image" width="800" height="800" style="max-height: 250px; max-width: 250px; min-height: 250px; min-width: 250px;">
+                                                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-overlay-icon">
+
+                                                        </div>
+                                                    </figure>
+
+                                                </a>
+                                                <div>
+                                                    <button class="uk-button uk-button-primary" OnClick="Sil(@item.Id);">Sil</button>
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function Sil(id) {
+
+        var r = confirm("Resim Silinecektir!");
+        if (r == true) {
+            $.get("/Admin/ResimSil?Id=" + id, function(resp) {
+                window.location.href="/Admin/Gallery";  
+            });
+        } 
+    };
+</script>

@@ -1,0 +1,5 @@
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Dto\bin\Debug\Catering.Dto.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Dto\bin\Debug\Catering.Dto.pdb
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Dto\obj\Debug\Catering.Dto.csprojResolveAssemblyReference.cache
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Dto\obj\Debug\Catering.Dto.dll
+C:\Users\mehmetfi\Desktop\Cater\Catering\Catering.Dto\obj\Debug\Catering.Dto.pdb

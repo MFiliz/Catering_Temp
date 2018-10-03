@@ -1,0 +1,61 @@
+﻿@model Catering.Dto.BiletSaveFormDto
+
+@using (Ajax.BeginForm("SaveBilet", "Contact", null, new AjaxOptions { UpdateTargetId = "divBiletFormPartial", OnSuccess = "OnScc" }, new { @class = "uk-form uk-form-stacked" }))
+{
+
+    <div id="alert-msg-contact" class="alert-msg uk-margin-bottom"></div>
+        <!-- name field -->
+    <div class="uk-form-row uk-margin-bottom">
+        <label for="name" data-uk-tooltip title="<strong>Name</strong><br />Your name.">İsim<span class="star"> *</span></label>
+        <div class="uk-form-controls">
+            @Html.TextBoxFor(x => x.Isim, new { @class = " uk-width-1-1" })
+            @*<input type="text" class="uk-width-1-1" name="contact-name" placeholder="" size="30" required="required">*@
+        </div>
+    </div>
+        <!-- email field -->
+        <div class="uk-form-row uk-margin-bottom">
+            <label for="email" data-uk-tooltip title="<strong>Email</strong><br />Email Address for contact.">E-Posta<span class="star"> *</span></label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(x => x.EPosta, new { @class = " uk-width-1-1" })
+            </div>
+        </div>
+        @*Phone Field*@
+        <div class="uk-form-row uk-margin-bottom">
+            <label for="email" data-uk-tooltip title="<strong>Email</strong><br />Email Address for contact.">Telefon<span class="star"> *</span></label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(x => x.Telefon, new { @class = " uk-width-1-1" })
+            </div>
+        </div>
+        <!-- subject field -->
+        <div class="uk-form-row uk-margin-bottom">
+            <label for="subject" data-uk-tooltip title="<strong>Subject</strong><br />Enter the subject of your message here.">Konu</label>
+            <div class="uk-form-controls">
+                @Html.TextBoxFor(x => x.Baslik, new { @class = " uk-width-1-1" })
+            </div>
+        </div>
+        <!-- message field -->
+        <div class="uk-form-row uk-margin-bottom">
+            <label for="message" data-uk-tooltip title="<strong>Message</strong><br />Enter your message here.">Mesaj<span class="star"> *</span></label>
+            <div class="uk-form-controls">
+                @Html.TextAreaFor(x => x.Mesaj, 5, 10, new { @class = "uk-width-1-1" })
+            </div>
+        </div>
+        <!-- submit button -->
+        <div class="form-actions">
+            <button id="Submitbtn" class="uk-button uk-button-primary" type="submit">Gönder</button>
+        </div>
+        <div id="message"></div>
+
+
+
+
+}
+<div style="display: none">
+    @Html.ValidationMessageFor(x => x.Isim)
+    @Html.ValidationMessageFor(x => x.Baslik)
+    @Html.ValidationMessageFor(x => x.EPosta)
+    @Html.ValidationMessageFor(x => x.Telefon)
+    @Html.ValidationMessageFor(x => x.Mesaj)
+    @Html.ValidationSummary()
+</div>
+<script src="@Url.Content("~/vendor/CustomError.js")"></script>

@@ -1,0 +1,75 @@
+﻿@model Catering.Dto.IletisimGetDto
+
+
+<aside class="tm-sidebar-a uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box">
+        @*<h3 class="uk-panel-title">Adres</h3>
+        <p>
+            @Model.AdresBaslik
+            <br> @Model.Adres1
+            <br> @Model.Adres2
+        </p>
+        <ul class="uk-list list-icons">
+
+            <li><i class="uk-icon-map-marker"></i> @Model.Semt, @Model.Il</li>
+        </ul>*@
+        <h3 class="uk-panel-title">İletişim</h3>
+        <p>
+            @Model.AdresBaslik
+        </p>
+        <ul class="uk-list list-icons">
+
+            <li><i class="uk-icon-mobile"></i> @Model.Telefon1</li>
+            @if (Model.Telefon2 != null)
+            {
+                <li><i class="uk-icon-mobile"></i> @Model.Telefon2</li>
+            }
+            @if (Model.Telefon3 != null)
+            {
+                <li><i class="uk-icon-mobile"></i> @Model.Telefon3</li>
+            }
+
+
+
+        </ul>
+        <p>
+            Gönül Doğan
+        </p>
+        <ul class="uk-list list-icons">
+
+            <li><i class="uk-icon-mobile"></i>+90 554 295 5475 </li>
+          
+
+
+        </ul>
+    </div>
+
+</aside>
+<!-- sidebar-b -->
+@if (!string.IsNullOrEmpty(Model.Instagram) || !string.IsNullOrEmpty(Model.Facebook) || !string.IsNullOrEmpty(Model.Twitter))
+{
+    <aside class="tm-sidebar-b uk-width-medium-1-2">
+        <div class="uk-panel uk-panel-box">
+
+            <h3 class="uk-panel-title ">Sosyal Medya</h3>
+            <div class="tm-socialbuttons">
+                @if (!string.IsNullOrEmpty(Model.Instagram))
+                {
+                    <a href="http://@Model.Instagram" class="uk-icon-button uk-icon-instagram" target="_blank"></a>
+
+                }
+                @if (!string.IsNullOrEmpty(Model.Facebook))
+                {
+                    <a href="http://@Model.Facebook" class="uk-icon-button uk-icon-facebook" target="_blank"></a>
+
+                }
+                @if (!string.IsNullOrEmpty(Model.Twitter))
+                {
+                    <a href="http://@Model.Twitter" class="uk-icon-button uk-icon-twitter" target="_blank"></a>
+
+                }
+            </div>
+            <br>
+        </div>
+    </aside>
+}

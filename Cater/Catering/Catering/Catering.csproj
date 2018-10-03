@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FD2AB90-9BD7-46D1-8453-5CB830509EAD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Catering</RootNamespace>
+    <AssemblyName>Catering</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\custom.css" />
+    <Content Include="css\ie9.css" />
+    <Content Include="css\theme-black.css" />
+    <Content Include="css\theme-calico.css" />
+    <Content Include="css\theme-espresso.css" />
+    <Content Include="css\theme-paprika.css" />
+    <Content Include="css\theme-tangelo.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\apple-touch-icon.png" />
+    <Content Include="images\background\bg-1.jpg" />
+    <Content Include="images\background\bg-2.jpg" />
+    <Content Include="images\background\bg-3.jpg" />
+    <Content Include="images\background\bg-4.jpg" />
+    <Content Include="images\background\bg-5.jpg" />
+    <Content Include="images\background\bg-6.jpg" />
+    <Content Include="images\background\bg-7.jpg" />
+    <Content Include="images\background\bg-image-1.jpg" />
+    <Content Include="images\background\bg-image-10.jpg" />
+    <Content Include="images\background\bg-image-11.jpg" />
+    <Content Include="images\background\bg-image-12.jpg" />
+    <Content Include="images\background\bg-image-2.jpg" />
+    <Content Include="images\background\bg-image-3.jpg" />
+    <Content Include="images\background\bg-image-4.jpg" />
+    <Content Include="images\background\bg-image-5.jpg" />
+    <Content Include="images\background\bg-image-6.jpg" />
+    <Content Include="images\background\bg-image-7.jpg" />
+    <Content Include="images\background\bg-image-8.jpg" />
+    <Content Include="images\background\bg-image-9.jpg" />
+    <Content Include="images\background\contact-image-2.jpg" />
+    <Content Include="images\background\contact-image.jpg" />
+    <Content Include="images\demo\avatar\client-1-thumb.png" />
+    <Content Include="images\demo\avatar\client-1.jpg" />
+    <Content Include="images\demo\avatar\client-2-thumb.png" />
+    <Content Include="images\demo\avatar\client-2.jpg" />
+    <Content Include="images\demo\avatar\client-3-thumb.png" />
+    <Content Include="images\demo\avatar\client-3.jpg" />
+    <Content Include="images\demo\avatar\client-4-thumb.png" />
+    <Content Include="images\demo\avatar\client-4.jpg" />
+    <Content Include="images\demo\avatar\client-5.png" />
+    <Content Include="images\demo\default\blog\blog-1.jpg" />
+    <Content Include="images\demo\default\blog\blog-2.jpg" />
+    <Content Include="images\demo\default\blog\blog-3.jpg" />
+    <Content Include="images\demo\default\blog\blog-4.jpg" />
+    <Content Include="images\demo\default\content\about-us.jpg" />
+    <Content Include="images\demo\default\content\coctail.png" />
+    <Content Include="images\demo\default\content\dish-1.png" />
+    <Content Include="images\demo\default\content\dish-2.png" />
+    <Content Include="images\demo\default\content\dish-3.png" />
+    <Content Include="images\demo\default\content\dish-4.png" />
+    <Content Include="images\demo\default\content\dish-5.png" />
+    <Content Include="images\demo\default\content\dish-6.png" />
+    <Content Include="images\demo\default\content\dish-7.png" />
+    <Content Include="images\demo\default\content\dish-8.png" />
+    <Content Include="images\demo\default\content\dish-9.png" />
+    <Content Include="images\demo\default\logo\logo-bottom.svg" />
+    <Content Include="images\demo\default\logo\logo-small.svg" />
+    <Content Include="images\demo\default\logo\logo.svg" />
+    <Content Include="images\demo\default\logo\sefam120.png" />
+    <Content Include="images\demo\default\logo\sefam65.png" />
+    <Content Include="images\demo\default\overlay\overlay-1.png" />
+    <Content Include="images\demo\default\overlay\overlay-2.png" />
+    <Content Include="images\demo\default\overlay\overlay-3.png" />
+    <Content Include="images\demo\default\slider\1.jpg" />
+    <Content Include="images\demo\default\slider\2.jpg" />
+    <Content Include="images\demo\default\slider\3.jpg" />
+    <Content Include="images\demo\features\module-layouts.svg" />
+    <Content Include="images\demo\icons\icon-apple.svg" />
+    <Content Include="images\demo\icons\icon-banana.svg" />
+    <Content Include="images\demo\icons\icon-bottle.svg" />
+    <Content Include="images\demo\icons\icon-bread.svg" />
+    <Content Include="images\demo\icons\icon-brocolli.svg" />
+    <Content Include="images\demo\icons\icon-burger.svg" />
+    <Content Include="images\demo\icons\icon-cake.svg" />
+    <Content Include="images\demo\icons\icon-cheese.svg" />
+    <Content Include="images\demo\icons\icon-cherry-1.svg" />
+    <Content Include="images\demo\icons\icon-cherry-2.svg" />
+    <Content Include="images\demo\icons\icon-coffee-bean.svg" />
+    <Content Include="images\demo\icons\icon-croissant.svg" />
+    <Content Include="images\demo\icons\icon-cup-1.svg" />
+    <Content Include="images\demo\icons\icon-cup-2.svg" />
+    <Content Include="images\demo\icons\icon-cup-half.svg" />
+    <Content Include="images\demo\icons\icon-cutlery-1.svg" />
+    <Content Include="images\demo\icons\icon-cutlery-2.svg" />
+    <Content Include="images\demo\icons\icon-dish-cover.svg" />
+    <Content Include="images\demo\icons\icon-dish.svg" />
+    <Content Include="images\demo\icons\icon-drink.svg" />
+    <Content Include="images\demo\icons\icon-egg.svg" />
+    <Content Include="images\demo\icons\icon-eggplant.svg" />
+    <Content Include="images\demo\icons\icon-grapes.svg" />
+    <Content Include="images\demo\icons\icon-icecream.svg" />
+    <Content Include="images\demo\icons\icon-knife.svg" />
+    <Content Include="images\demo\icons\icon-mallet.svg" />
+    <Content Include="images\demo\icons\icon-menu.svg" />
+    <Content Include="images\demo\icons\icon-milk.svg" />
+    <Content Include="images\demo\icons\icon-mug.svg" />
+    <Content Include="images\demo\icons\icon-mushroom.svg" />
+    <Content Include="images\demo\icons\icon-orange.svg" />
+    <Content Include="images\demo\icons\icon-pizza.svg" />
+    <Content Include="images\demo\icons\icon-potato.svg" />
+    <Content Include="images\demo\icons\icon-saucepan.svg" />
+    <Content Include="images\demo\icons\icon-sausage.svg" />
+    <Content Include="images\demo\icons\icon-spoon.svg" />
+    <Content Include="images\demo\icons\icon-steamer.svg" />
+    <Content Include="images\demo\icons\icon-sweet.svg" />
+    <Content Include="images\demo\icons\icon-toque.svg" />
+    <Content Include="images\demo\icons\icon-wine-half.svg" />
+    <Content Include="images\demo\icons\icon-wine.svg" />
+    <Content Include="images\demo\menu\food-1.png" />
+    <Content Include="images\demo\menu\food-10.jpg" />
+    <Content Include="images\demo\menu\food-11.jpg" />
+    <Content Include="images\demo\menu\food-12.jpg" />
+    <Content Include="images\demo\menu\food-2.png" />
+    <Content Include="images\demo\menu\food-3.png" />
+    <Content Include="images\demo\menu\food-4.png" />
+    <Content Include="images\demo\menu\food-5.png" />
+    <Content Include="images\demo\menu\food-6.png" />
+    <Content Include="images\demo\menu\food-7.jpg" />
+    <Content Include="images\demo\menu\food-8.jpg" />
+    <Content Include="images\demo\menu\food-9.jpg" />
+    <Content Include="images\demo\menu\special-1.jpg" />
+    <Content Include="images\demo\menu\special-2.jpg" />
+    <Content Include="images\demo\menu\special-3.jpg" />
+    <Content Include="images\demo\menu\special-4.jpg" />
+    <Content Include="images\demo\menu\special-5.jpg" />
+    <Content Include="images\demo\menu\special-6.jpg" />
+    <Content Include="images\demo\menu\special-7.jpg" />
+    <Content Include="images\demo\signature\sign-1-white.png" />
+    <Content Include="images\demo\signature\sign-1.png" />
+    <Content Include="images\demo\styles\1.jpg" />
+    <Content Include="images\demo\styles\2.jpg" />
+    <Content Include="images\demo\styles\3.jpg" />
+    <Content Include="images\demo\styles\4.jpg" />
+    <Content Include="images\demo\styles\5.jpg" />
+    <Content Include="images\demo\styles\6.jpg" />
+    <Content Include="images\demo\uikit\uikit_avatar.svg" />
+    <Content Include="images\demo\uikit\uikit_placeholder.svg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\index.html" />
+    <Content Include="vendor\CustomError.js" />
+    <Content Include="vendor\fullcalendar\fullcalendar.min.css" />
+    <Content Include="vendor\fullcalendar\fullcalendar.min.js" />
+    <Content Include="vendor\fullcalendar\lib\moment.min.js" />
+    <Content Include="vendor\jquery.min.js" />
+    <Content Include="vendor\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="vendor\theme.js" />
+    <Content Include="vendor\uikit\js\components\accordion.js" />
+    <Content Include="vendor\uikit\js\components\accordion.min.js" />
+    <Content Include="vendor\uikit\js\components\autocomplete.js" />
+    <Content Include="vendor\uikit\js\components\autocomplete.min.js" />
+    <Content Include="vendor\uikit\js\components\datepicker.js" />
+    <Content Include="vendor\uikit\js\components\datepicker.min.js" />
+    <Content Include="vendor\uikit\js\components\form-password.js" />
+    <Content Include="vendor\uikit\js\components\form-password.min.js" />
+    <Content Include="vendor\uikit\js\components\form-select.js" />
+    <Content Include="vendor\uikit\js\components\form-select.min.js" />
+    <Content Include="vendor\uikit\js\components\grid-parallax.js" />
+    <Content Include="vendor\uikit\js\components\grid-parallax.min.js" />
+    <Content Include="vendor\uikit\js\components\grid.js" />
+    <Content Include="vendor\uikit\js\components\grid.min.js" />
+    <Content Include="vendor\uikit\js\components\htmleditor.js" />
+    <Content Include="vendor\uikit\js\components\htmleditor.min.js" />
+    <Content Include="vendor\uikit\js\components\lightbox.js" />
+    <Content Include="vendor\uikit\js\components\lightbox.min.js" />
+    <Content Include="vendor\uikit\js\components\nestable.js" />
+    <Content Include="vendor\uikit\js\components\nestable.min.js" />
+    <Content Include="vendor\uikit\js\components\notify.js" />
+    <Content Include="vendor\uikit\js\components\notify.min.js" />
+    <Content Include="vendor\uikit\js\components\pagination.js" />
+    <Content Include="vendor\uikit\js\components\pagination.min.js" />
+    <Content Include="vendor\uikit\js\components\parallax.js" />
+    <Content Include="vendor\uikit\js\components\parallax.min.js" />
+    <Content Include="vendor\uikit\js\components\search.js" />
+    <Content Include="vendor\uikit\js\components\search.min.js" />
+    <Content Include="vendor\uikit\js\components\slider.js" />
+    <Content Include="vendor\uikit\js\components\slider.min.js" />
+    <Content Include="vendor\uikit\js\components\slideset.js" />
+    <Content Include="vendor\uikit\js\components\slideset.min.js" />
+    <Content Include="vendor\uikit\js\components\slideshow-fx.js" />
+    <Content Include="vendor\uikit\js\components\slideshow-fx.min.js" />
+    <Content Include="vendor\uikit\js\components\slideshow.js" />
+    <Content Include="vendor\uikit\js\components\slideshow.min.js" />
+    <Content Include="vendor\uikit\js\components\sortable.js" />
+    <Content Include="vendor\uikit\js\components\sortable.min.js" />
+    <Content Include="vendor\uikit\js\components\sticky.js" />
+    <Content Include="vendor\uikit\js\components\sticky.min.js" />
+    <Content Include="vendor\uikit\js\components\timepicker.js" />
+    <Content Include="vendor\uikit\js\components\timepicker.min.js" />
+    <Content Include="vendor\uikit\js\components\tooltip.js" />
+    <Content Include="vendor\uikit\js\components\tooltip.min.js" />
+    <Content Include="vendor\uikit\js\components\upload.js" />
+    <Content Include="vendor\uikit\js\components\upload.min.js" />
+    <Content Include="vendor\uikit\js\core\alert.js" />
+    <Content Include="vendor\uikit\js\core\alert.min.js" />
+    <Content Include="vendor\uikit\js\core\button.js" />
+    <Content Include="vendor\uikit\js\core\button.min.js" />
+    <Content Include="vendor\uikit\js\core\core.js" />
+    <Content Include="vendor\uikit\js\core\core.min.js" />
+    <Content Include="vendor\uikit\js\core\cover.js" />
+    <Content Include="vendor\uikit\js\core\cover.min.js" />
+    <Content Include="vendor\uikit\js\core\dropdown.js" />
+    <Content Include="vendor\uikit\js\core\dropdown.min.js" />
+    <Content Include="vendor\uikit\js\core\grid.js" />
+    <Content Include="vendor\uikit\js\core\grid.min.js" />
+    <Content Include="vendor\uikit\js\core\modal.js" />
+    <Content Include="vendor\uikit\js\core\modal.min.js" />
+    <Content Include="vendor\uikit\js\core\nav.js" />
+    <Content Include="vendor\uikit\js\core\nav.min.js" />
+    <Content Include="vendor\uikit\js\core\offcanvas.js" />
+    <Content Include="vendor\uikit\js\core\offcanvas.min.js" />
+    <Content Include="vendor\uikit\js\core\scrollspy.js" />
+    <Content Include="vendor\uikit\js\core\scrollspy.min.js" />
+    <Content Include="vendor\uikit\js\core\smooth-scroll.js" />
+    <Content Include="vendor\uikit\js\core\smooth-scroll.min.js" />
+    <Content Include="vendor\uikit\js\core\switcher.js" />
+    <Content Include="vendor\uikit\js\core\switcher.min.js" />
+    <Content Include="vendor\uikit\js\core\tab.js" />
+    <Content Include="vendor\uikit\js\core\tab.min.js" />
+    <Content Include="vendor\uikit\js\core\toggle.js" />
+    <Content Include="vendor\uikit\js\core\toggle.min.js" />
+    <Content Include="vendor\uikit\js\core\touch.js" />
+    <Content Include="vendor\uikit\js\core\touch.min.js" />
+    <Content Include="vendor\uikit\js\core\utility.js" />
+    <Content Include="vendor\uikit\js\core\utility.min.js" />
+    <Content Include="vendor\uikit\js\uikit-rtl.min.js" />
+    <Content Include="vendor\uikit\js\uikit.js" />
+    <Content Include="vendor\uikit\js\uikit.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\HizmetlerimizController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_Master.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="vendor\uikit\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\uikit\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\uikit\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\uikit\fonts\FontAwesome.otf" />
+    <Content Include="vendor\uikit\less\components\accordion.less" />
+    <Content Include="vendor\uikit\less\components\autocomplete.less" />
+    <Content Include="vendor\uikit\less\components\datepicker.less" />
+    <Content Include="vendor\uikit\less\components\dotnav.less" />
+    <Content Include="vendor\uikit\less\components\form-advanced.less" />
+    <Content Include="vendor\uikit\less\components\form-file.less" />
+    <Content Include="vendor\uikit\less\components\form-password.less" />
+    <Content Include="vendor\uikit\less\components\form-select.less" />
+    <Content Include="vendor\uikit\less\components\htmleditor.less" />
+    <Content Include="vendor\uikit\less\components\nestable.less" />
+    <Content Include="vendor\uikit\less\components\notify.less" />
+    <Content Include="vendor\uikit\less\components\placeholder.less" />
+    <Content Include="vendor\uikit\less\components\progress.less" />
+    <Content Include="vendor\uikit\less\components\search.less" />
+    <Content Include="vendor\uikit\less\components\slidenav.less" />
+    <Content Include="vendor\uikit\less\components\slider.less" />
+    <Content Include="vendor\uikit\less\components\slideshow.less" />
+    <Content Include="vendor\uikit\less\components\sortable.less" />
+    <Content Include="vendor\uikit\less\components\sticky.less" />
+    <Content Include="vendor\uikit\less\components\tooltip.less" />
+    <Content Include="vendor\uikit\less\components\upload.less" />
+    <Content Include="vendor\uikit\less\core\alert.less" />
+    <Content Include="vendor\uikit\less\core\animation.less" />
+    <Content Include="vendor\uikit\less\core\article.less" />
+    <Content Include="vendor\uikit\less\core\badge.less" />
+    <Content Include="vendor\uikit\less\core\base.less" />
+    <Content Include="vendor\uikit\less\core\block.less" />
+    <Content Include="vendor\uikit\less\core\breadcrumb.less" />
+    <Content Include="vendor\uikit\less\core\button.less" />
+    <Content Include="vendor\uikit\less\core\close.less" />
+    <Content Include="vendor\uikit\less\core\column.less" />
+    <Content Include="vendor\uikit\less\core\comment.less" />
+    <Content Include="vendor\uikit\less\core\contrast.less" />
+    <Content Include="vendor\uikit\less\core\cover.less" />
+    <Content Include="vendor\uikit\less\core\description-list.less" />
+    <Content Include="vendor\uikit\less\core\dropdown.less" />
+    <Content Include="vendor\uikit\less\core\flex.less" />
+    <Content Include="vendor\uikit\less\core\form.less" />
+    <Content Include="vendor\uikit\less\core\grid.less" />
+    <Content Include="vendor\uikit\less\core\icon.less" />
+    <Content Include="vendor\uikit\less\core\list.less" />
+    <Content Include="vendor\uikit\less\core\modal.less" />
+    <Content Include="vendor\uikit\less\core\nav.less" />
+    <Content Include="vendor\uikit\less\core\navbar.less" />
+    <Content Include="vendor\uikit\less\core\offcanvas.less" />
+    <Content Include="vendor\uikit\less\core\overlay.less" />
+    <Content Include="vendor\uikit\less\core\pagination.less" />
+    <Content Include="vendor\uikit\less\core\panel.less" />
+    <Content Include="vendor\uikit\less\core\print.less" />
+    <Content Include="vendor\uikit\less\core\subnav.less" />
+    <Content Include="vendor\uikit\less\core\switcher.less" />
+    <Content Include="vendor\uikit\less\core\tab.less" />
+    <Content Include="vendor\uikit\less\core\table.less" />
+    <Content Include="vendor\uikit\less\core\text.less" />
+    <Content Include="vendor\uikit\less\core\thumbnail.less" />
+    <Content Include="vendor\uikit\less\core\thumbnav.less" />
+    <Content Include="vendor\uikit\less\core\utility.less" />
+    <Content Include="vendor\uikit\less\core\variables.less" />
+    <Content Include="vendor\uikit\less\uikit-variables.less" />
+    <Content Include="vendor\uikit\less\uikit.less" />
+    <None Include="Properties\PublishProfiles\ToFile.pubxml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\_AdminMaster.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Contact\_IletisimPartial.cshtml" />
+    <Content Include="Views\Contact\_BiletPartial.cshtml" />
+    <Content Include="Views\Admin\Message.cshtml" />
+    <Content Include="Views\Admin\_BiletListPartial.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Admin\Gallery.cshtml" />
+    <Content Include="Views\Hizmetlerimiz\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\demo\gallery\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catering.Dto\Catering.Dto.csproj">
+      <Project>{2b4fdfe9-dc51-483f-9c1c-84860d238731}</Project>
+      <Name>Catering.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Catering.Repository\Catering.Repository.csproj">
+      <Project>{c48c2e7c-b1af-4de9-9081-d62eef6a47b0}</Project>
+      <Name>Catering.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60243</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60243/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

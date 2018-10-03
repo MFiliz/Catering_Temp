@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Admin/_BiletListPartial.cshtml" hash="ffffffffc50725c1" filehash="3fc57bfb597c" flags="110000" assembly="App_Web_kmkfryvx" type="ASP._Page_Views_Admin__BiletListPartial_cshtml">
+    <filedeps>
+        <filedep name="/Views/Admin/_BiletListPartial.cshtml" />
+    </filedeps>
+</preserve>

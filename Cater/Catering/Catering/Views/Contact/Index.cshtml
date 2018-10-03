@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Master.cshtml";
+}
+
+  <!-- header-a -->
+<div id="tm-header-a" class="tm-block-header-a uk-block uk-block-default tm-block-fullwidth tm-grid-collapse ">
+    <div class="uk-container uk-container-center">
+        <section class="tm-header-a uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}">
+            <div class="uk-width-1-1">
+                <div class="uk-panel uk-text-center uk-contrast tm-overlay-secondary tm-header-height">
+                    <div class="tm-background-cover uk-cover-background uk-flex uk-flex-center uk-flex-middle" style="background-position: 50% 0px; background-image:url(@Url.Content("~/images/background/bg-image-9.jpg"))" data-uk-parallax="{bg: '-200'}">
+                        <div class="uk-position-relative uk-container">
+                            <div data-uk-parallax="{opacity: '1,0', y: '-50'}">
+                                <div data-uk-scrollspy="{cls:'uk-animation-slide-top', delay:300}">
+                                    <h1 class="uk-module-title-alt uk-margin-top">İletişim</h1>
+                                </div>
+                                <div data-uk-scrollspy="{cls:'uk-animation-slide-top', delay:800}">
+                                    <h5 class="uk-sub-title-small">İLETİŞİM İÇİN 1 DAKİKANIZ VAR MI?</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- main content -->
+<div id="tm-main" class="tm-block-main uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <div class="tm-middle uk-grid" data-uk-grid-match data-uk-grid-margin>
+            <div class="tm-main uk-width-medium-1-2">
+                <main id="tm-content" class="tm-content">
+                    <article class="uk-article tm-article">
+                        <div class="tm-article-wrapper">
+                            <div class="tm-article-content uk-margin-large-bottom uk-margin-top-remove">
+                                <div class="tm-article">
+                                    <!-- contact form -->
+                                    <div class="contact" id="divBiletFormPartial">
+
+                                    </div>
+                                    <div id="alert-msg-contact2" class="alert-msg uk-margin-bottom"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </main>
+            </div>
+            <!-- sidebar-a -->
+            <div class="uk-grid uk-width-medium-1-2" id="divIletisimPartial">
+            
+            </div>
+        </div>
+    </div>
+</div>
+<!-- bottom-a -->
+<div id="tm-bottom-a" class="tm-block-bottom-a uk-block uk-block-secondary">
+    <div class="uk-container uk-container-center">
+        <section class="tm-bottom-a uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin>
+            <div class="uk-width-1-1">
+                <div class="uk-panel">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-2">
+                            <h2 class="uk-margin-small-top">E-Postanınızı bırakın bizden haberdar olun</h2>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <!-- subscription form -->
+                            <form id="subscribe_form" class="uk-form">
+                                <div id="alert-msg-subscribe" class="alert-msg"></div>
+                                <div class="uk-grid" data-uk-grid-margin>
+                                    <div class="uk-width-medium-2-5">
+                                        <div>
+                                            <input type="text" placeholder="İsminiz" name="subscribe-name" class="uk-width-1-1" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium-2-5">
+                                        <div>
+                                            <input type="email" placeholder="E-Posta Adresiniz" name="subscribe-email" class="uk-width-1-1" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-medium-1-5">
+                                        <div class="form-group uk-margin-remove">
+                                            <button id="subscribe_button" type="submit" class="uk-button uk-button-primary uk-button-large">Kaydol</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<script>
+    $(function () {
+        $("#divIletisimPartial").load("/Contact/GetIletisimPartial");
+        $("#divBiletFormPartial").load("/Contact/GetTicketFormPartial");
+        
+
+    });
+</script>
+

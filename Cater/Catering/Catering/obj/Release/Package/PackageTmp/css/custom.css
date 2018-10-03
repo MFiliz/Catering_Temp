@@ -1,0 +1,15 @@
+/* Copyright (C) arrowthemes, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+
+/* ========================================================================
+   Use this file to add custom CSS easily
+   ========================================================================== */
+.green-color {
+    color: green !important;
+}
+
+.red-color {
+    color: red !important;
+}
+.margin-ustten-yok {
+    margin-top: 5px;
+}
