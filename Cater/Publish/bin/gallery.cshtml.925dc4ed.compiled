@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Admin/Gallery.cshtml" hash="ffffffffc50725c1" filehash="1e67acb84ec6" flags="110000" assembly="App_Web_kmkfryvx" type="ASP._Page_Views_Admin_Gallery_cshtml">
-    <filedeps>
-        <filedep name="/Views/Admin/Gallery.cshtml" />
-    </filedeps>
-</preserve>
